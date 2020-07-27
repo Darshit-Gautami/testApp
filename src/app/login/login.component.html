@@ -1,0 +1,37 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="">  
+    <form [formGroup]="LoginForm" (ngSubmit)="this[EventValue]()">  
+        <div class="row">  
+        <table class="table">  
+        <tr>  
+          <td>Email</td>  
+          <td>  
+            <input type="hidden" formControlName="device_type">   
+            <input type="hidden" formControlName="player_id"> 
+            <input type="text" formControlName="email">  
+            <div *ngIf="submitted && LoginForm.controls.email.errors" class="text-danger">  
+              <div *ngIf="LoginForm.controls.email.errors.required">Email required</div>  
+              <div *ngIf="LoginForm.controls.email.errors?.email"> Email is not valid.</div>
+            </div>  
+          </td>  
+        </tr>
+        <tr>  
+            <td>Password</td>  
+            <td>  
+              <input type="password" formControlName="password">  
+              <div *ngIf="submitted && LoginForm.controls.password.errors" class="text-danger">  
+                <div *ngIf="LoginForm.controls.password.errors.required">Email required</div>  
+              </div>  
+            </td>  
+          </tr>  
+        <tr>  
+      
+          <td colspan="4">  
+            <button type="submit" class="col-sm-1 btn btn-primary pad5">Login</button>  
+            <button type="reset" class="col-sm-1 btn btn-danger">Reset</button>
+          </td>  
+        </tr>  
+      </table>  
+      </div>  
+    </form>  
+    </div> 

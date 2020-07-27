@@ -1,0 +1,67 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="">  
+    <form [formGroup]="SignUp" (ngSubmit)="this[EventValue]()">  
+        <div class="row">  
+        <table class="table">  
+        <tr>  
+          <td>FirstName</td>  
+          <td>  
+            <input type="hidden" formControlName="device_type">   
+            <input type="hidden" formControlName="player_id">   
+            <input type="text" formControlName="first_name">  
+            <div *ngIf="submitted && SignUp.controls.first_name.errors" class="text-danger">  
+              <div *ngIf="SignUp.controls.first_name.errors.required">Name is required</div>  
+            </div>   
+          </td>  
+        </tr>
+        <tr>  
+            <td>LastName</td>  
+            <td>  
+              <input type="text" formControlName="last_name">  
+              <div *ngIf="submitted && SignUp.controls.last_name.errors" class="text-danger">  
+                <div *ngIf="SignUp.controls.last_name.errors.required">Name is required</div>  
+              </div>   
+            </td>  
+          </tr>  
+          <tr>  
+            <td>Password</td>  
+            <td>  
+              <input type="password" formControlName="password">  
+              <div *ngIf="submitted && SignUp.controls.password.errors" class="text-danger">  
+                <div *ngIf="SignUp.controls.password.errors.required">Email required</div>  
+              </div>  
+            </td>  
+          </tr>  
+        <tr>  
+          <td>Contact</td>  
+          <td><input type="text" formControlName="phone">  
+            <div *ngIf="submitted && SignUp.controls.phone.errors" class="text-danger"> 
+              <div *ngIf="SignUp.controls.phone.errors.required"> Contact required.</div>   
+              <div *ngIf="SignUp.controls.phone.errors.pattern"> Contact number not valid.</div>  
+            </div>   
+          </td>  
+        </tr>  
+        <tr>  
+          <td>Email</td>  
+          <td>  
+            <input type="text" formControlName="email">  
+            <div *ngIf="submitted && SignUp.controls.email.errors" class="text-danger">  
+              <div *ngIf="SignUp.controls.email.errors.required">Email required</div>  
+              <div *ngIf="SignUp.controls.email.errors?.email"> Email is not valid.</div>
+            </div>  
+          </td>  
+        </tr>  
+         
+        <tr>  
+      
+          <td colspan="4">  
+            <button type="submit" class="col-sm-1 btn btn-primary pad5">Save</button>  
+            <button type="reset" class="col-sm-1 btn btn-danger">Reset</button>
+            
+      
+          </td>  
+        </tr>  
+      </table>  
+      </div>  
+    </form>  
+    </div> 
